@@ -1,0 +1,36 @@
+error: spellcheck(Hunspell)
+  --> /repo/src/main.rs:1
+   |
+ 1 |  Somethign is speld wrong hre.
+   |  ^^^^^^^^^
+   | - Something or Sometime
+   |
+   |   Possible spelling mistake found.
+
+error: spellcheck(Hunspell)
+  --> /repo/src/main.rs:1
+   |
+ 1 |  Somethign is speld wrong hre.
+   |               ^^^^^
+   | - sped, speed, spend, or spell
+   |
+   |   Possible spelling mistake found.
+
+error: spellcheck(Hunspell)
+  --> /repo/src/main.rs:1
+   |
+ 1 |  Somethign is speld wrong hre.
+   |                           ^^^
+   | - her, hr, he, re, here, hire, hare, or one of 9 others
+   |
+   |   Possible spelling mistake found.
+
+error: spellcheck(Hunspell)
+  --> /repo/src/main.rs:3
+   |
+ 3 |  An instroment.
+   |     ^^^^^^^^^^
+   | - instrument
+   |
+   |   Possible spelling mistake found.
+
