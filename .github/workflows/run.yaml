@@ -39,3 +39,14 @@ jobs:
         with:
           file_pattern: rust/cargo-spellcheck/output.txt
           commit_message: Apply changes
+
+  cargo-expand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run
+        run: make -C rust/cargo-expand run
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: rust/cargo-expand/output.txt
+          commit_message: Apply changes
