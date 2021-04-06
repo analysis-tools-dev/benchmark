@@ -1,0 +1,6 @@
+---
+inputs:
+  - "src/main.rs"
+command: "cargo clippy"
+outputs:
+  - "output.txt"
