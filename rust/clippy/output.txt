@@ -1,1 +1,1 @@
-the input device is not a TTY
+error: could not find `Cargo.toml` in `/repo` or any parent directory
