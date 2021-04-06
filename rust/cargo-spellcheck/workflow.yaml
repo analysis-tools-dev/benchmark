@@ -1,0 +1,5 @@
+inputs:
+  - src/main.rs
+command: cargo audit
+outputs:
+  - output.txt
