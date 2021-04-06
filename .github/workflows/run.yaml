@@ -13,10 +13,29 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run
         run: make -C rust/clippy run
-        
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: rust/clippy/output.txt
+          commit_message: Apply changes
+
   cargo-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run
         run: make -C rust/cargo-audit run
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: rust/cargo-audit/output.txt
+          commit_message: Apply changes
+
+  cargo-spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run
+        run: make -C rust/cargo-spellcheck run
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: rust/cargo-spellcheck/output.txt
+          commit_message: Apply changes
