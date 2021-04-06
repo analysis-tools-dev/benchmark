@@ -1,4 +1,4 @@
-FROM rust:latest
+FROM rustlang/rust:nightly-stretch-slim
 
 RUN cargo install cargo-expand
 
