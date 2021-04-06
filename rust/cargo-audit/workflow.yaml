@@ -1,0 +1,5 @@
+inputs:
+  - Cargo.lock
+command: cargo audit
+outputs:
+  - output.txt
