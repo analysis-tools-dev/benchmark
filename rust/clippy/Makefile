@@ -4,4 +4,4 @@ build:
 
 .PHONY: run
 run: build
-	docker run -v ${PWD}:/repo -ti clippy 2>&1 > output.txt
+	docker run -v ${CURDIR}:/repo clippy > output.txt 2>&1 || true
