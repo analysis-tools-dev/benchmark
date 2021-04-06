@@ -1,3 +1,8 @@
 FROM rust:1
 
-RUN rustup add component clippy
+RUN rustup component add clippy
+
+WORKDIR /repo
+
+CMD ["clippy"]
+ENTRYPOINT ["/usr/local/cargo/bin/cargo"]
