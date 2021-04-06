@@ -1,0 +1,2 @@
+    Checking rustfix-text v0.1.0 (/repo)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.78s

@@ -1,0 +1,5 @@
+inputs:
+  - src/main.rs
+command: cargo fix
+outputs:
+  - output.txt
