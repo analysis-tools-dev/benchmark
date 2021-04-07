@@ -1,0 +1,5 @@
+inputs:
+  - input.txt
+command: tool-name command
+outputs:
+  - output.txt
