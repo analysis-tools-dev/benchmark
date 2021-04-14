@@ -14,8 +14,6 @@ jobs:
       - name: Run
         run: make -C rust/clippy run
       - uses: shogo82148/actions-mutex@v1
-        with:
-          key: rust_clippy
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: rust/clippy/output.txt
@@ -28,8 +26,6 @@ jobs:
       - name: Run
         run: make -C rust/cargo-audit run
       - uses: shogo82148/actions-mutex@v1
-        with:
-          key: rust_cargo-audit
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: rust/cargo-audit/output.txt
@@ -42,8 +38,6 @@ jobs:
       - name: Run
         run: make -C rust/cargo-spellcheck run
       - uses: shogo82148/actions-mutex@v1
-        with:
-          key: rust_cargo-spellcheck
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: rust/cargo-spellcheck/output.txt
@@ -56,8 +50,6 @@ jobs:
       - name: Run
         run: make -C rust/cargo-expand run
       - uses: shogo82148/actions-mutex@v1
-        with:
-          key: rust_cargo-expand
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: rust/cargo-expand/output.txt
