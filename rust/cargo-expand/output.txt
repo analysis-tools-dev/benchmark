@@ -1,5 +1,5 @@
     Checking cargo-expand-test v0.1.0 (/repo)
-    Finished check [unoptimized + debuginfo] target(s) in 0.55s
+    Finished check [unoptimized + debuginfo] target(s) in 0.49s
 
 #![feature(prelude_import)]
 #[prelude_import]
@@ -13,21 +13,19 @@ impl ::core::fmt::Debug for S {
     fn fmt(&self, f: &mut ::core::fmt::Formatter) -> ::core::fmt::Result {
         match *self {
             S => {
-                let debug_trait_builder =
-                    &mut ::core::fmt::Formatter::debug_tuple(f, "S");
+                let debug_trait_builder = &mut ::core::fmt::Formatter::debug_tuple(f, "S");
                 ::core::fmt::DebugTuple::finish(debug_trait_builder)
             }
         }
     }
 }
-
 fn main() {
     {
-        ::std::io::_print(::core::fmt::Arguments::new_v1(&["", "\n"],
-                                                         &match (&S,) {
-                                                              (arg0,) =>
-                                                              [::core::fmt::ArgumentV1::new(arg0,
-                                                                                            ::core::fmt::Debug::fmt)],
-                                                          }));
+        ::std::io::_print(::core::fmt::Arguments::new_v1(
+            &["", "\n"],
+            &match (&S,) {
+                (arg0,) => [::core::fmt::ArgumentV1::new(arg0, ::core::fmt::Debug::fmt)],
+            },
+        ));
     };
 }
