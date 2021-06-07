@@ -12,4 +12,4 @@ warning: `assert!(false)` should probably be replaced
 
 warning: 1 warning emitted
 
-    Finished dev [unoptimized + debuginfo] target(s) in 0.38s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.45s
