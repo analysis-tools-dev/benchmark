@@ -22,6 +22,7 @@ jobs:
           commit_message: Apply changes
 
   cargo-audit:
+    needs: clippy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -36,6 +37,7 @@ jobs:
           commit_message: Apply changes
 
   cargo-spellcheck:
+    needs: cargo-audit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -50,6 +52,7 @@ jobs:
           commit_message: Apply changes
 
   cargo-expand:
+    needs: cargo-spellcheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
