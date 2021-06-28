@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.head_ref }}
+          ref: master
       - name: Run
         run: make -C rust/cargo-audit run
       - uses: shogo82148/actions-mutex@v1
@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.head_ref }}
+          ref: master
       - name: Run
         run: make -C rust/cargo-spellcheck run
       - uses: shogo82148/actions-mutex@v1
@@ -57,7 +57,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.head_ref }}
+          ref: master
       - name: Run
         run: make -C rust/cargo-expand run
       - uses: shogo82148/actions-mutex@v1
