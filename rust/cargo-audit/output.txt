@@ -1,8 +1,7 @@
     Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
-      Loaded 312 security advisories (from /usr/local/cargo/advisory-db)
+      Loaded 313 security advisories (from /usr/local/cargo/advisory-db)
     Updating crates.io index
     Scanning Cargo.lock for vulnerabilities (3 crate dependencies)
-error: 1 vulnerability found!
 Crate:         base64
 Version:       0.5.1
 Title:         Integer overflow leads to heap-based buffer overflow in encode_config_buf
@@ -14,3 +13,4 @@ Dependency tree:
 base64 0.5.1
 └── base64_vuln 0.1.0
 
+error: 1 vulnerability found!
