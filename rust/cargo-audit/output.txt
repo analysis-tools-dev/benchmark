@@ -10,7 +10,7 @@ ID:            RUSTSEC-2017-0004
 URL:           https://rustsec.org/advisories/RUSTSEC-2017-0004
 Solution:      Upgrade to >=0.5.2
 Dependency tree: 
+error: 1 vulnerability found!
 base64 0.5.1
 └── base64_vuln 0.1.0
 
-error: 1 vulnerability found!
