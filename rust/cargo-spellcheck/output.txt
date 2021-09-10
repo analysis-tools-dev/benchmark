@@ -12,7 +12,7 @@ error: spellcheck(Hunspell)
    |
  1 |  Somethign is speld wrong hre.
    |               ^^^^^
-   | - sped, speed, spend, or spell
+   | - sped, speed, spend, spell, sp eld, or sp-eld
    |
    |   Possible spelling mistake found.
 
