@@ -12,5 +12,5 @@ Solution:      Upgrade to >=0.5.2
 Dependency tree: 
 base64 0.5.1
 └── base64_vuln 0.1.0
-
-error: 1 vulnerability found!
+error: 
+1 vulnerability found!
