@@ -11,4 +11,4 @@ warning: `assert!(false)` should probably be replaced
   = note: this warning originates in the macro `assert` (in Nightly builds, run with -Z macro-backtrace for more info)
 
 warning: `clippy` (bin "clippy") generated 1 warning
-    Finished dev [unoptimized + debuginfo] target(s) in 0.29s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.26s
