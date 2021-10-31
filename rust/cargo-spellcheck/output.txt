@@ -34,3 +34,4 @@ error: spellcheck(Hunspell)
    |
    |   Possible spelling mistake found.
 
+[?25h
