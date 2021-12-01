@@ -1,5 +1,5 @@
     Checking cargo-expand-test v0.1.0 (/repo)
-    Finished check [unoptimized + debuginfo] target(s) in 0.47s
+    Finished check [unoptimized + debuginfo] target(s) in 0.62s
 
 #![feature(prelude_import)]
 #[prelude_import]
