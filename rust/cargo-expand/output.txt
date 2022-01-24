@@ -1,5 +1,6 @@
     Checking cargo-expand-test v0.1.0 (/repo)
-    Finished check [unoptimized + debuginfo] target(s) in 0.46s
+    Finished check [unoptimized + debuginfo] target(s) in 0.55s
+
 #![feature(prelude_import)]
 #[prelude_import]
 use std::prelude::rust_2018::*;
@@ -28,4 +29,3 @@ fn main() {
         ));
     };
 }
-
