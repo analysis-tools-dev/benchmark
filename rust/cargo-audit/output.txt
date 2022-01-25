@@ -1,5 +1,5 @@
     Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
-      Loaded 392 security advisories (from /usr/local/cargo/advisory-db)
+      Loaded 394 security advisories (from /usr/local/cargo/advisory-db)
     Updating crates.io index
     Scanning Cargo.lock for vulnerabilities (3 crate dependencies)
 Crate:         base64
@@ -9,8 +9,8 @@ Date:          2017-05-03
 ID:            RUSTSEC-2017-0004
 URL:           https://rustsec.org/advisories/RUSTSEC-2017-0004
 Solution:      Upgrade to >=0.5.2
+error: 1 vulnerability found!
 Dependency tree: 
 base64 0.5.1
 └── base64_vuln 0.1.0
 
-error: 1 vulnerability found!
