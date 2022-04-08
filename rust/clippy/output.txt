@@ -8,7 +8,6 @@ warning: `assert!(false)` should probably be replaced
   = note: `#[warn(clippy::assertions_on_constants)]` on by default
   = help: use `panic!()` or `unreachable!()`
   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#assertions_on_constants
-  = note: this warning originates in the macro `assert` (in Nightly builds, run with -Z macro-backtrace for more info)
 
 warning: `clippy` (bin "clippy") generated 1 warning
-    Finished dev [unoptimized + debuginfo] target(s) in 0.26s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.32s
