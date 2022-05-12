@@ -10,4 +10,4 @@ warning: `assert!(false)` should probably be replaced
   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#assertions_on_constants
 
 warning: `clippy` (bin "clippy") generated 1 warning
-    Finished dev [unoptimized + debuginfo] target(s) in 0.27s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30s
