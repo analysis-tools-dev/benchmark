@@ -20,10 +20,6 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-
       - name: Run
         run: make -C rust/${{ matrix.tool }} run
         continue-on-error: true
