@@ -1,5 +1,5 @@
 # Example base image
-FROM debian:buster
+FROM debian:bullseye
 
 # Install your dependencies
 RUN apt-get update && \
