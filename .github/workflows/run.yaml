@@ -14,6 +14,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
       - name: Run
         run: make -C rust/clippy run
 
@@ -22,7 +26,7 @@ jobs:
 
       - name: Run
         run: make -C rust/cargo-spellcheck run
-      
+
       - name: Run
         run: make -C rust/cargo-expand run
 
