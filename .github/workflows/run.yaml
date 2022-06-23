@@ -9,13 +9,13 @@ on:
 jobs:
   clippy:
     runs-on: ubuntu-latest
+    concurrency: just_one
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
       - name: Run
         run: make -C rust/clippy run
-      - uses: shogo82148/actions-mutex@v1
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: rust/clippy/output.txt
@@ -24,13 +24,13 @@ jobs:
   cargo-audit:
     needs: clippy
     runs-on: ubuntu-latest
+    concurrency: just_one
     steps:
       - uses: actions/checkout@v2
         with:
           ref: main
       - name: Run
         run: make -C rust/cargo-audit run
-      - uses: shogo82148/actions-mutex@v1
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: rust/cargo-audit/output.txt
@@ -39,13 +39,13 @@ jobs:
   cargo-spellcheck:
     needs: cargo-audit
     runs-on: ubuntu-latest
+    concurrency: just_one
     steps:
       - uses: actions/checkout@v2
         with:
           ref: main
       - name: Run
         run: make -C rust/cargo-spellcheck run
-      - uses: shogo82148/actions-mutex@v1
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: rust/cargo-spellcheck/output.txt
@@ -54,13 +54,13 @@ jobs:
   cargo-expand:
     needs: cargo-spellcheck
     runs-on: ubuntu-latest
+    concurrency: just_one
     steps:
       - uses: actions/checkout@v2
         with:
           ref: main
       - name: Run
         run: make -C rust/cargo-expand run
-      - uses: shogo82148/actions-mutex@v1
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: rust/cargo-expand/output.txt
