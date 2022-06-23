@@ -1,4 +1,4 @@
-FROM rust:1
+FROM rust:latest
 
 RUN rustup component add clippy
 

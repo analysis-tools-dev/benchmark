@@ -1,5 +1,8 @@
-name: rust
+name: run
 on:
+  repository_dispatch:
+  workflow_dispatch:
+  pull_request:
   push:
     branches:
       - main
@@ -7,64 +10,24 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  clippy:
+  rust:
     runs-on: ubuntu-latest
-    concurrency: just_one
+    strategy:
+      matrix:
+        tool: [clippy, cargo-audit, cargo-spellcheck, cargo-expand]
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
+          
       - name: Run
-        run: make -C rust/clippy run
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          file_pattern: rust/clippy/output.txt
-          commit_message: Apply changes
+        run: make -C rust/${{ matrix.tool }} run
+        continue-on-error: true
 
-  cargo-audit:
-    needs: clippy
-    runs-on: ubuntu-latest
-    concurrency: just_one
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: main
-      - name: Run
-        run: make -C rust/cargo-audit run
+  commit:
+      runs-on: ubuntu-latest
+      needs: [rust]
+      steps:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          file_pattern: rust/cargo-audit/output.txt
-          commit_message: Apply changes
-
-  cargo-spellcheck:
-    needs: cargo-audit
-    runs-on: ubuntu-latest
-    concurrency: just_one
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: main
-      - name: Run
-        run: make -C rust/cargo-spellcheck run
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          file_pattern: rust/cargo-spellcheck/output.txt
-          commit_message: Apply changes
-
-  cargo-expand:
-    needs: cargo-spellcheck
-    runs-on: ubuntu-latest
-    concurrency: just_one
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: main
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-      - name: Run
-        run: make -C rust/cargo-expand run
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          file_pattern: rust/cargo-expand/output.txt
-          commit_message: Apply changes
+          commit_message: Update benchmarks
