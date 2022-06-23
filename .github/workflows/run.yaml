@@ -12,6 +12,9 @@ on:
 jobs:
   rust:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tool: [clippy, cargo-audit, cargo-spellcheck, cargo-expand]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -22,16 +25,8 @@ jobs:
           toolchain: stable
 
       - name: Run
-        run: make -C rust/clippy run
-
-      - name: Run
-        run: make -C rust/cargo-audit run
-
-      - name: Run
-        run: make -C rust/cargo-spellcheck run
-
-      - name: Run
-        run: make -C rust/cargo-expand run
+        run: make -C rust/${{ matrix.tool }} run
+        continue-on-error: true
 
   commit:
       runs-on: ubuntu-latest
